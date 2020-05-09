@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">DailyNeed</string>
+
+    <string name="login_as">Login as</string>
+    <string name="user">User</string>
+    <string name="shop">Shop</string>
+    <string name="email">Enter Email</string>
+    <string name="password">Enter Password</string>
+    <string name="forget">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="forget_name">Forgot Password</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="register_email">Enter Your Registered Email</string>
+    <string name="email_address">Email Address</string>
+
+    <string name="submit">Submit</string>
+    <string name="facebook_app_id">3066589883393890</string>
+
+
+</resources>
