@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    tools:context=".common.ForgotPassActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_100dp">
+
+                <ImageView
+                    android:id="@+id/im_back_signup_forgot"
+                    android:layout_width="@dimen/margin_60dp"
+                    android:layout_height="@dimen/margin_70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="40dp"
+                    android:paddingLeft="@dimen/margin_20dp"
+                    android:paddingTop="@dimen/margin_10dp"
+                    android:paddingRight="@dimen/margin_20dp"
+                    android:paddingBottom="@dimen/margin_10dp"
+                    android:src="@drawable/ic_back_arrow"
+                    android:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Password Recovery"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/register_email"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/email_address"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/email_password_change"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Email Address"
+                    android:paddingLeft="12dp"
+                    android:singleLine="true"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="25sp"
+                    android:visibility="gone"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="25sp"
+                    android:background="@drawable/bg_grey_edittext"
+
+                    >
+
+                </ImageView>
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content">
+            <ProgressBar android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:indeterminateTint="@color/colorPrimaryDark"
+                android:id="@+id/progress_bar_forget"
+                android:visibility="gone"
+                android:elevation="3dp"
+                android:layout_centerInParent="true"
+                />
+
+            <Button
+                android:id="@+id/btn_recover_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_grey_edittext"
+                android:text="Recover Password"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

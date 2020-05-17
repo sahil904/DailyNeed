@@ -31,11 +31,10 @@ public class SessionManger {
     }
 
 
-    public void CreateInstallerLogin(boolean shop, boolean user, String email, String password, String name, String id) {
+    public void CreateInstallerLogin(boolean shop, boolean user, String email, String name, String id) {
         editor.putBoolean(IS_USER_LOGIN, user);
         editor.putBoolean(IS_SHOP_LOGIN, shop);
         editor.putString(KEY_EMAIL, email);
-        editor.putString(KEY_PASSWORD, password);
         editor.putString(KEY_NAME, name);
         editor.putString(KEY_Id,id);
 

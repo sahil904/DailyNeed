@@ -7,7 +7,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
 
-class Retro {
+class  Retro {
     companion object {
 
         var gson = GsonBuilder()
@@ -23,7 +23,7 @@ class Retro {
             loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
             client.addInterceptor(loggingInterceptor)
 
-                return Retrofit.Builder().baseUrl("http://13.235.243.70/teksmart/api/")
+                return Retrofit.Builder().baseUrl("http://35.185.178.242/online_shop/api/")
                     .addConverterFactory(
                         GsonConverterFactory.create(gson))
                     .client(client.build())

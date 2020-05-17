@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    tools:context=".shop.activity.AddDetailsActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <ImageView
+                    android:id="@+id/im_back_signup"
+                    android:layout_width="@dimen/margin_60dp"
+                    android:layout_height="@dimen/margin_70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="40dp"
+                    android:paddingLeft="@dimen/margin_20dp"
+                    android:paddingTop="@dimen/margin_10dp"
+                    android:paddingRight="@dimen/margin_20dp"
+                    android:paddingBottom="@dimen/margin_10dp"
+                    android:src="@drawable/ic_back_arrow"
+                    android:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="40dp"
+                    android:text="Contact form"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="Contact Details"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:ellipsize="end"
+                    android:text="Enter your Information below or login with Social Account."
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/shop_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/bg_grey_edittext"
+
+                    android:hint="Shop Name"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp"
+
+                    />
+
+
+                <EditText
+                    android:id="@+id/email_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_grey_edittext"
+                    android:hint="Email Id"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="20dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+
+                    android:layout_marginTop="15dp">
+
+                    <EditText
+                        android:id="@+id/shop_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_grey_edittext"
+                        android:drawableRight="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        android:hint="Type"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="@dimen/margin_20dp"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp"
+
+                        />
+
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/signup_visible"-->
+                    <!--                        android:layout_width="40dp"-->
+                    <!--                        android:layout_height="40dp"-->
+                    <!--                        android:layout_alignParentRight="true"-->
+                    <!--                        android:layout_centerVertical="true"-->
+                    <!--                        android:layout_marginRight="10dp"-->
+                    <!--                        android:padding="12dp"-->
+                    <!--                        android:visibility="gone"-->
+                    <!--                        android:src="@drawable/ic_eye" />-->
+
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/signup_invisible"-->
+                    <!--                        android:layout_width="40dp"-->
+                    <!--                        android:layout_height="40dp"-->
+                    <!--                        android:layout_alignParentRight="true"-->
+                    <!--                        android:layout_centerVertical="true"-->
+                    <!--                        android:layout_marginRight="10dp"-->
+                    <!--                        android:padding="12dp"-->
+                    <!--                        android:src="@drawable/ic_visible_opened_eye_interface_option"-->
+                    <!--                        android:visibility="gone" />-->
+
+                </RelativeLayout>
+                <!--                <EditText-->
+                <!--                    android:id="@+id/tv_pass_signup"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="45dp"-->
+                <!--                    android:layout_marginTop="15dp"-->
+                <!--                    android:background="@drawable/bg_grey_edittext"-->
+                <!---->
+                <!--                    android:hint="Password"-->
+                <!--                    android:imeOptions="actionDone"-->
+                <!--                    android:inputType="textPassword"-->
+                <!--                    android:paddingLeft="20dp"-->
+                <!--                    android:textColorHint="@color/black"-->
+
+                <!--                    android:textSize="14sp" />-->
+
+
+                <EditText
+                    android:id="@+id/confrim_password_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_grey_edittext"
+
+                    android:hint="Confirm Password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:paddingLeft="20dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp">
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_register"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:elevation="3dp"
+                        android:indeterminateTint="@color/colorAccent"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btn_add_detials"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_grey_edittext"
+
+                        android:text="@string/submit"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="20dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Already have an account?   "
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/login_register_pg_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Login"
+
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/signup_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>

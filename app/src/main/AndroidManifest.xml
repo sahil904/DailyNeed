@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sahil.dailyneed">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,16 +13,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".shop.activity.ShopHomeActivity"></activity>
+        <activity android:name=".user.activity.AccountActivity"></activity>
+        <activity android:name=".user.activity.ShopDeatilsActivity" />
+        <activity android:name=".shop.activity.AddDetailsActivity" />
+        <activity android:name=".common.ForgotPassActivity" />
+        <activity android:name=".common.SignupActivity" />
+        <activity android:name=".common.LoginActivity" />
+        <activity android:name=".shop.activity.ShopHomeActivity" />
         <activity android:name=".common.UserTypeActivity" />
-        <activity android:name=".common.SplashActivity" />
-        <activity android:name=".user.activity.MainActivity">
+        <activity android:name=".common.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".user.activity.MainActivity" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <service
+            android:name=".util.MyFirebaseMessagingService"
+            android:exported="false"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

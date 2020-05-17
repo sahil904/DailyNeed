@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "419268957158",
+    "firebase_url": "https://dailyneed-9be3a.firebaseio.com",
+    "project_id": "dailyneed-9be3a",
+    "storage_bucket": "dailyneed-9be3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419268957158:android:045560f1466751ecf5fc27",
+        "android_client_info": {
+          "package_name": "com.sahil.dailyneed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419268957158-58q9vucr9r0scmava1tm0h5dgnu9c85u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sahil.dailyneed",
+            "certificate_hash": "15eccb249fe8a4bf21596e13f995fabaecb16c24"
+          }
+        },
+        {
+          "client_id": "419268957158-joocf1r6dfqm54oheno3fj2u40ihm19m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9sG0jWdZd590tU4jV9-A9SJZvvoFQikQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419268957158-joocf1r6dfqm54oheno3fj2u40ihm19m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
