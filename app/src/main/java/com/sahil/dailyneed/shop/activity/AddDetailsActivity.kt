@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.designoweb.marketplace.subcontractor.activity.api.Retro
 import com.sahil.dailyneed.R
+import com.sahil.dailyneed.activity.api.Retro
 import com.sahil.dailyneed.shop.model.RegisterModel
 import com.sahil.dailyneed.util.SessionManger
 import kotlinx.android.synthetic.main.activity_add_details.*
@@ -34,6 +34,7 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
 
     private fun clickfun() {
         btn_add_detials.setOnClickListener(this)
+        shop_type.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -54,10 +55,40 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
 
 
             }
+            R.id.shop_type -> {
+                val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+                builder.setTitle("Select")
+
+                val tench =
+                    arrayOf(
+                        "Grocery",
+                        "Medical"
+
+                    )
+                builder.setItems(tench) { dialog, which ->
+                    when (which) {
+                        0 -> {
+                            shop_type.setText(tench[0])
+                            dialog.dismiss()
+                        }
+                        1 -> {
+                            shop_type.setText(tench[1])
+                            dialog.dismiss()
+                        }
+
+
+                    }
+                }
+
+                val dialog = builder.create()
+                dialog.show()
+                return
+            }
         }
     }
 
     private fun apihit() {
+        add_progressbar.visibility=View.VISIBLE
         namee_body = RequestBody.create(
             MediaType.parse("text/plain"),
             shop_name.text.toString()
@@ -74,10 +105,12 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
     }
 
     override fun onFailure(call: Call<RegisterModel>, t: Throwable) {
+        add_progressbar.visibility=View.GONE
 
     }
 
     override fun onResponse(call: Call<RegisterModel>, response: Response<RegisterModel>) {
+        add_progressbar.visibility=View.GONE
         if (response.isSuccessful) {
             var intent = Intent(this, ShopHomeActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)

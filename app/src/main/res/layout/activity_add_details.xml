@@ -133,7 +133,6 @@
                         android:drawableRight="@drawable/ic_keyboard_arrow_down_black_24dp"
                         android:hint="Type"
                         android:imeOptions="actionDone"
-                        android:inputType="textPassword"
                         android:paddingLeft="20dp"
                         android:paddingRight="@dimen/margin_20dp"
                         android:textColorHint="@color/black"
@@ -257,7 +256,7 @@
         </LinearLayout>
 
         <ProgressBar
-            android:id="@+id/signup_progressbar"
+            android:id="@+id/add_progressbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

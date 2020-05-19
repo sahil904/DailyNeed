@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sahil"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:text="C4CA4238A0"
+        android:layout_gravity="center"
+
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="2020-05-18 01:50:21am"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginLeft="@dimen/margin_15dp"
+        android:layout_marginRight="@dimen/margin_15dp"
+        android:background="@color/black"/>
+</LinearLayout>

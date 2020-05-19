@@ -7,9 +7,9 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.designoweb.marketplace.subcontractor.activity.api.Retro
 import com.google.firebase.iid.FirebaseInstanceId
 import com.sahil.dailyneed.R
+import com.sahil.dailyneed.activity.api.Retro
 import com.sahil.dailyneed.shop.activity.AddDetailsActivity
 import com.sahil.dailyneed.shop.model.RegisterModel
 import com.sahil.dailyneed.user.activity.MainActivity

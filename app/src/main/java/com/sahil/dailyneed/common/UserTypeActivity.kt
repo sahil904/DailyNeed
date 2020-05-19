@@ -23,8 +23,8 @@ class UserTypeActivity : AppCompatActivity(), View.OnClickListener {
 
     val PERMISSION_ID = 42
     lateinit var mFusedLocationClient: FusedLocationProviderClient
-    lateinit var lat: String
-    lateinit var long: String
+     var lat: String="0"
+     var long: String="0"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_type)

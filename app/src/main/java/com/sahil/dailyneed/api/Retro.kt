@@ -1,4 +1,4 @@
-package com.designoweb.marketplace.subcontractor.activity.api
+package com.sahil.dailyneed.activity.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

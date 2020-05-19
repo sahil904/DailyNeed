@@ -9,7 +9,6 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.designoweb.marketplace.subcontractor.activity.api.Retro
 import com.facebook.*
 import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.Auth
@@ -20,6 +19,7 @@ import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.iid.FirebaseInstanceId
 import com.sahil.dailyneed.R
+import com.sahil.dailyneed.activity.api.Retro
 import com.sahil.dailyneed.shop.activity.ShopHomeActivity
 import com.sahil.dailyneed.shop.model.RegisterModel
 import com.sahil.dailyneed.user.activity.MainActivity

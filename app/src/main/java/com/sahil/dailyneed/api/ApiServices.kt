@@ -1,6 +1,8 @@
-package com.designoweb.marketplace.subcontractor.activity.api
+package com.sahil.dailyneed.activity.api
 
 import com.sahil.dailyneed.shop.model.RegisterModel
+import com.sahil.dailyneed.shop.model.UserRequestModel
+import com.sahil.dailyneed.user.model.ShopListModel
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.*
@@ -21,7 +23,7 @@ interface ApiServices {
         @Field("lat") lat: String,
         @Field("lang") lang: String
 
-        ): retrofit2.Call<RegisterModel>
+    ): retrofit2.Call<RegisterModel>
 
 
     @FormUrlEncoded
@@ -34,15 +36,31 @@ interface ApiServices {
         @Field("lat") lat: String,
         @Field("lang") lang: String
 
-        ): retrofit2.Call<RegisterModel>
+    ): retrofit2.Call<RegisterModel>
+
+    @FormUrlEncoded
+    @POST("shopKeeperToken")
+    fun shopKeeperToken(
+        @Field("shop_id") shop_id: String
+    ): retrofit2.Call<UserRequestModel>
+
+    @GET("shopListing")
+    fun shopListing(): retrofit2.Call<ShopListModel>
+
+    @FormUrlEncoded
+    @POST("shopBooking")
+    fun shopBooking(
+        @Field("shop_id") shop_id: String,
+        @Field("user_id") user_id: String
+    ): retrofit2.Call<UserRequestModel>
 
 
     @Multipart
     @POST("addShop")
     fun addShop(
-    @Part("shop_name") shop_name: RequestBody, @Part("shop_type") shop_type: RequestBody,
-    @Part("user_id") user_id: RequestBody, @Part image_url: MultipartBody.Part?
-): retrofit2.Call<RegisterModel>
+        @Part("shop_name") shop_name: RequestBody, @Part("shop_type") shop_type: RequestBody,
+        @Part("user_id") user_id: RequestBody, @Part image_url: MultipartBody.Part?
+    ): retrofit2.Call<RegisterModel>
 
 
 }

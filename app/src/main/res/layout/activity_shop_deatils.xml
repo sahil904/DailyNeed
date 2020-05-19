@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".user.activity.ShopDeatilsActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_above="@+id/book_now"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:id="@+id/item_deatils_recyler"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_height="match_parent"/>
+
     <Button
         android:id="@+id/book_now"
         android:layout_width="match_parent"
