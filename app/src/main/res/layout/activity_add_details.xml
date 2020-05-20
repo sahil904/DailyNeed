@@ -95,25 +95,25 @@
 
 
                 <EditText
-                    android:id="@+id/email_register"
+                    android:id="@+id/city_register"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/bg_grey_edittext"
-                    android:hint="Email Id"
+                    android:hint="City"
                     android:imeOptions="actionDone"
                     android:inputType="textEmailAddress"
                     android:paddingLeft="20dp"
                     android:textColorHint="@color/black"
                     android:textSize="14sp"
-                    android:visibility="gone"
+                    android:visibility="visible"
 
                     />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp">
+                    android:layout_marginTop="0dp">
 
 
 

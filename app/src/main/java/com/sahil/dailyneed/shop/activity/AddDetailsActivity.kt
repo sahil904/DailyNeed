@@ -20,6 +20,7 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
     lateinit var sessionManager: SessionManger
     lateinit var namee_body: RequestBody
     lateinit var shop_type_body: RequestBody
+    lateinit var city_type_body: RequestBody
     lateinit var user_id_body: RequestBody
     lateinit var user_id: String
     var body1: MultipartBody.Part? = null
@@ -42,6 +43,8 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
             R.id.btn_add_detials -> {
                 if (shop_name.text.isNullOrEmpty()) {
 
+
+                } else if (city_register.text.isNullOrEmpty()) {
 
                 } else if (shop_type.text.isNullOrEmpty()) {
 
@@ -88,7 +91,7 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
     }
 
     private fun apihit() {
-        add_progressbar.visibility=View.VISIBLE
+        add_progressbar.visibility = View.VISIBLE
         namee_body = RequestBody.create(
             MediaType.parse("text/plain"),
             shop_name.text.toString()
@@ -101,21 +104,27 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
             MediaType.parse("text/plain"),
             shop_type.text.toString()
         ) as RequestBody
-        Retro.ApiService().addShop(namee_body, shop_type_body, user_id_body, body1).enqueue(this)
+        city_type_body = RequestBody.create(
+            MediaType.parse("text/plain"),
+            city_register.text.toString()
+        ) as RequestBody
+        Retro.ApiService().addShop(namee_body, shop_type_body, user_id_body, city_type_body, body1)
+            .enqueue(this)
     }
 
     override fun onFailure(call: Call<RegisterModel>, t: Throwable) {
-        add_progressbar.visibility=View.GONE
+        add_progressbar.visibility = View.GONE
 
     }
 
     override fun onResponse(call: Call<RegisterModel>, response: Response<RegisterModel>) {
-        add_progressbar.visibility=View.GONE
+        add_progressbar.visibility = View.GONE
         if (response.isSuccessful) {
             var intent = Intent(this, ShopHomeActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
+            finish()
         }
     }
 }
