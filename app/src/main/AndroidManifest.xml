@@ -15,10 +15,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".shop.activity.AddItem"></activity>
-        <activity
-            android:name=".shop.activity.AddItemInShop"
-            android:label="@string/title_activity_add_item_in_shop"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".user.activity.AccountActivity" />
         <activity android:name=".user.activity.ShopDeatilsActivity" />
         <activity android:name=".shop.activity.AddDetailsActivity" />
