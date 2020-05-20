@@ -1,5 +1,6 @@
 package com.sahil.dailyneed.shop.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.sahil.dailyneed.R
+import com.sahil.dailyneed.shop.activity.AddItem
 import com.sahil.dailyneed.shop.adapter.RemoveAdapter
 import kotlinx.android.synthetic.main.fragment_item.*
 
@@ -34,6 +36,11 @@ class ItemFragment : Fragment() {
         item_list_recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = RemoveAdapter(shopList.getValue("grocery"))
+        }
+
+        addItemInShop.setOnClickListener{
+            val intent = Intent(context, AddItem::class.java)
+            startActivity(intent)
         }
     }
 
