@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.sahil.dailyneed.R
 import com.sahil.dailyneed.shop.fragment.HomeFragment
+import com.sahil.dailyneed.shop.fragment.ItemFragment
 import com.sahil.dailyneed.shop.fragment.ProfileFragment
+import com.sahil.dailyneed.shop.fragment.RequestFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.custom_toolbar.*
 
@@ -21,10 +23,13 @@ class ShopHomeActivity : AppCompatActivity() {
         bottom_navigation.setOnNavigationItemReselectedListener { item ->
             when (item.itemId) {
                 R.id.home_bottom -> {
-                    callfragment(HomeFragment(), "Home")
+                    callfragment(RequestFragment(), "Home")
                 }
                 R.id.user_bottom -> {
                     callfragment(ProfileFragment(), "Profile")
+
+                } R.id.add_item -> {
+                    callfragment(ItemFragment(), "Item")
 
                 }
             }

@@ -10,6 +10,7 @@ import com.google.android.material.tabs.TabLayout
 
 import com.sahil.dailyneed.R
 import com.sahil.dailyneed.shop.adapter.MyAdapter
+import kotlinx.android.synthetic.main.custom_toolbar.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
@@ -28,6 +29,8 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+
+        callfragment(RequestFragment(), "Home")
 
         tabLayout_shop.addTab(tabLayout_shop.newTab().setText("Request"))
         tabLayout_shop.addTab(tabLayout_shop.newTab().setText("Items"))
@@ -49,6 +52,11 @@ class HomeFragment : Fragment() {
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+    }
+    private fun callfragment(fragment: Fragment, s: String) {
+//        tv_custom_toolbar.setText(s)
+        activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.framelayout_user, fragment, s)?.commit()
+
     }
 
 }

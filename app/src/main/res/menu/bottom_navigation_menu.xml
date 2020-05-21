@@ -6,6 +6,12 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/home"/>
     <item
+        android:id="@+id/add_item"
+        android:enabled="true"
+        android:iconTint="@color/black"
+        android:icon="@drawable/add_box"
+        android:title="Add Items"/>
+    <item
         android:id="@+id/user_bottom"
         android:enabled="true"
         android:icon="@drawable/ic_account_circle_black_24dp"

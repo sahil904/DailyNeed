@@ -3,6 +3,7 @@ package com.sahil.dailyneed.user.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.sahil.dailyneed.R
 import com.sahil.dailyneed.user.fragment.HomeUserFragment
 import com.sahil.dailyneed.user.fragment.ProfileUserFragment
@@ -28,8 +29,23 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-    }
+        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.home_bottom -> {
+                    callfragment(HomeUserFragment(), "Home")
+                    // Respond to navigation item 1 click
+                    true
+                }
+                R.id.user_bottom -> {
+                    callfragment(ProfileUserFragment(), "Profile")
+                    // Respond to navigation item 2 click
+                    true
+                }
+                else -> false
+            }
+        }
 
+    }
 
     private fun callfragment(fragment: Fragment, s: String) {
         tv_custom_toolbar.setText(s)

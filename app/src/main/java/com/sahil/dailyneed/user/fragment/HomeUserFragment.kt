@@ -72,7 +72,7 @@ class HomeUserFragment : Fragment(), MyItemClickListener, Callback<ShopListModel
                 )
 
             }
-            recyler_shop_list.adapter = ShopListadapter(context!!, list, this)
+            recyler_shop_list?.adapter = ShopListadapter(context!!, list, this)
 
         }
 
