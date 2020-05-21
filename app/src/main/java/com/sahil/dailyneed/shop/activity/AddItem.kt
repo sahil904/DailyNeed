@@ -16,6 +16,6 @@ class AddItem : AppCompatActivity() {
         shopList.put("grocery", arrayListOf("Sugar", "Rice", "Pulses","Fruits", "Biscuits", "Tea", "Soap", "Bread", "Pasta"));
         shopList.put("healthcare", arrayListOf("Acetaminophen", "Adderall", "Alprazolam" , "Amitriptyline",
             "Sanitizer", "Hand Wash", "Body Care", "Pain killer"))
-        addItemsRecylerView.adapter = AddItemAdapter(shopList.getValue("grocery"))
+        addItemsRecylerView.adapter = AddItemAdapter(this,shopList.getValue("grocery"))
     }
 }
