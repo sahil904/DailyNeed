@@ -2,7 +2,7 @@ package com.sahil.dailyneed.shop.model
 
 
 data class ItemModel(
-    val `data`: List<Items>,
+    val `data`: MutableList<Items>,
     val msg: String,
     val result: Int
 )

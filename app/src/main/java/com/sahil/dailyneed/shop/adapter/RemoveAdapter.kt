@@ -18,18 +18,19 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RemoveAdapter(var context: Context, private val list: List<Items>)
+class RemoveAdapter(var context: Context, private val list: MutableList<Items>)
     : RecyclerView.Adapter<RemoveAdapter.RemoveItemListViewHolder>(), Callback<MessageModel> {
 
+    lateinit var adapter: RemoveAdapter.RemoveItemListViewHolder;
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RemoveItemListViewHolder {
-
-        return RemoveItemListViewHolder(
+        adapter= RemoveItemListViewHolder(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.current_item_list,
                 parent,
                 false
             )
         )
+        return adapter
     }
 
     override fun getItemCount(): Int {
@@ -43,13 +44,19 @@ class RemoveAdapter(var context: Context, private val list: List<Items>)
         }
     }
 
+    fun removeItem(position: Int)
+    {
+        list.removeAt(position)
+        notifyDataSetChanged()
+    }
+
     override fun onFailure(call: Call<MessageModel>, t: Throwable) {
-        Toast.makeText(context, "Item didn't added. Please try again", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Not able to delete. Please try again", Toast.LENGTH_SHORT).show()
     }
 
     override fun onResponse(call: Call<MessageModel>, response: Response<MessageModel>) {
-        Toast.makeText(context, "Item is already added.", Toast.LENGTH_SHORT).show()
-
+        Toast.makeText(context, response.body()!!.msg, Toast.LENGTH_SHORT).show()
+        removeItem(adapter.adapterPosition)
     }
 
     inner class RemoveItemListViewHolder (itemView: View) :RecyclerView.ViewHolder(itemView){
