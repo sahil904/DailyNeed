@@ -1,5 +1,7 @@
 package com.sahil.dailyneed.activity.api
 
+import com.sahil.dailyneed.shop.model.ItemModel
+import com.sahil.dailyneed.shop.model.MessageModel
 import com.sahil.dailyneed.shop.model.RegisterModel
 import com.sahil.dailyneed.shop.model.UserRequestModel
 import com.sahil.dailyneed.user.model.ShopListModel
@@ -43,6 +45,25 @@ interface ApiServices {
     fun shopKeeperToken(
         @Field("shop_id") shop_id: String
     ): retrofit2.Call<UserRequestModel>
+
+    @FormUrlEncoded
+    @POST("addItem")
+    fun addItem(
+        @Field("shop_id") shop_id: String,
+        @Field("item_name") item_name: String
+    ): retrofit2.Call<ItemModel>
+
+    @FormUrlEncoded
+    @POST("deleteItem")
+    fun deleteItem(
+        @Field("item_id") item_id: String
+    ): retrofit2.Call<MessageModel>
+
+    @FormUrlEncoded
+    @POST("getItem")
+    fun getShopItem(
+        @Field("shop_id") shop_id: String
+    ): retrofit2.Call<ItemModel>
 
     @GET("shopListing")
     fun shopListing(): retrofit2.Call<ShopListModel>

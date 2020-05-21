@@ -46,7 +46,7 @@ class ShopDeatilsActivity : AppCompatActivity(), View.OnClickListener, Callback<
                 "Sanitizer", "Hand Wash", "Body Care", "Pain killer"
             )
         );
-        item_deatils_recyler.adapter = AddItemAdapter(shopList.getValue("grocery"))
+        //item_deatils_recyler.adapter = AddItemAdapter(shopList.getValue("grocery"))
     }
 
     private fun clickfun() {

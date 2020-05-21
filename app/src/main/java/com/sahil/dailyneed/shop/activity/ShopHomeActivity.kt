@@ -38,7 +38,6 @@ class ShopHomeActivity : AppCompatActivity() {
 
     }
 
-
     private fun callfragment(fragment: Fragment, s: String) {
         tv_custom_toolbar.setText(s)
         supportFragmentManager.beginTransaction().replace(R.id.framelayout_user, fragment, s)
