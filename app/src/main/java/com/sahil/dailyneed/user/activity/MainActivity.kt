@@ -33,13 +33,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        var bundle = Bundle()
-        bundle.putString("lat", lat)
-        bundle.putString("long", long)
-        callfragment(homeUserFragment, "Home")
-        homeUserFragment.arguments = bundle
-
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         getLastLocation()
@@ -93,8 +86,13 @@ class MainActivity : AppCompatActivity() {
                         Log.d("location.longit", location.latitude.toString())
                         Log.d("location.latitu)", location.longitude.toString())
 
+                        var bundle = Bundle()
                         lat = location.latitude.toString()
                         long = location.longitude.toString()
+                        bundle.putString("lat", lat)
+                        bundle.putString("long", long)
+                        callfragment(homeUserFragment, "Home")
+                        homeUserFragment.arguments = bundle
                     }
                 }
             } else {
