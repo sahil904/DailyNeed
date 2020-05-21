@@ -10,13 +10,13 @@ import com.google.android.material.tabs.TabLayout
 
 import com.sahil.dailyneed.R
 import com.sahil.dailyneed.shop.adapter.MyAdapter
+import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
  * A simple [Fragment] subclass.
  */
 class HomeFragment : Fragment() {
-    lateinit var tabLayout: TabLayout
-    lateinit var viewPager: ViewPager
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,21 +29,21 @@ class HomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
 
-        tabLayout.addTab(tabLayout.newTab().setText("Request"))
-        tabLayout.addTab(tabLayout.newTab().setText("Items"))
+        tabLayout_shop.addTab(tabLayout_shop.newTab().setText("Request"))
+        tabLayout_shop.addTab(tabLayout_shop.newTab().setText("Items"))
 
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL)
+        tabLayout_shop.setTabGravity(TabLayout.GRAVITY_FILL)
 
 
 
-        val adapter = MyAdapter(context, activity!!.supportFragmentManager, tabLayout.getTabCount())
-        viewPager.setAdapter(adapter)
+        val adapter = MyAdapter(context, activity!!.supportFragmentManager, tabLayout_shop.getTabCount())
+        viewPager_shop.setAdapter(adapter)
 
-        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
+        viewPager_shop.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout_shop))
 
-        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        tabLayout_shop.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-                viewPager.setCurrentItem(tab.position)
+                viewPager_shop.setCurrentItem(tab.position)
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {}
