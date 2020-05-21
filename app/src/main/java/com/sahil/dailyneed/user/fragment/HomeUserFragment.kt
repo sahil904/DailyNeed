@@ -26,7 +26,8 @@ import retrofit2.Response
 class HomeUserFragment : Fragment(), MyItemClickListener, Callback<ShopListModel> {
     var list: ArrayList<DataShopListModel> = ArrayList()
 
-
+var lat:String?=null
+var long:String?=null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,7 +43,9 @@ class HomeUserFragment : Fragment(), MyItemClickListener, Callback<ShopListModel
     }
 
     private fun apihit() {
-        Retro.ApiService().shopListing().enqueue(this)
+        lat=arguments!!.getString("lat")
+        long=arguments!!.getString("long")
+        Retro.ApiService().shopListing(lat!!,long!!).enqueue(this)
     }
 
     override fun onItemClick(pos: Int) {

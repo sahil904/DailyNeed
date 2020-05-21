@@ -65,8 +65,11 @@ interface ApiServices {
         @Field("shop_id") shop_id: String
     ): retrofit2.Call<ItemModel>
 
-    @GET("shopListing")
-    fun shopListing(): retrofit2.Call<ShopListModel>
+
+    @FormUrlEncoded
+    @POST("shopListing")
+    fun shopListing(  @Field("lat") lat: String,
+                      @Field("long") long: String): retrofit2.Call<ShopListModel>
 
     @FormUrlEncoded
     @POST("shopBooking")
