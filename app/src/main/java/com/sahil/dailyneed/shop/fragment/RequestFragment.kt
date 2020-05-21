@@ -11,6 +11,7 @@ import com.sahil.dailyneed.interfaces.MyItemClickListener
 import com.sahil.dailyneed.shop.adapter.UserTokenadapter
 import com.sahil.dailyneed.shop.model.DataUserRequestModel
 import com.sahil.dailyneed.shop.model.UserRequestModel
+import com.sahil.dailyneed.util.SessionManger
 import kotlinx.android.synthetic.main.fragment_request.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -21,6 +22,9 @@ import retrofit2.Response
  */
 class RequestFragment : Fragment(), Callback<UserRequestModel>, MyItemClickListener {
     private var user_list: ArrayList<DataUserRequestModel> = ArrayList()
+    private lateinit var sessionManger:SessionManger
+    private lateinit var user_id:String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,12 +35,14 @@ class RequestFragment : Fragment(), Callback<UserRequestModel>, MyItemClickListe
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        sessionManger= SessionManger(context)
+        user_id=sessionManger.uSerDeatis.get("id")!!
         apihit()
     }
 
     private fun apihit() {
 
-        Retro.ApiService().shopKeeperToken("1").enqueue(this)
+        Retro.ApiService().shopKeeperToken(user_id).enqueue(this)
     }
 
     override fun onFailure(call: Call<UserRequestModel>, t: Throwable) {
