@@ -127,6 +127,8 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener, Callback<Regis
 
                     var intent = Intent(this, AddDetailsActivity::class.java)
                     intent.putExtra("user_id",user_id)
+                    intent.putExtra("lat",lat)
+                    intent.putExtra("long",long)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                     startActivity(intent)
