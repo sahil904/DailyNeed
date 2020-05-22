@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.sahil.dailyneed.R
 import com.sahil.dailyneed.activity.api.Retro
 import com.sahil.dailyneed.shop.model.RegisterModel
+import com.sahil.dailyneed.shop.model.ShopUser
 import com.sahil.dailyneed.util.SessionManger
 import kotlinx.android.synthetic.main.activity_add_details.*
 import okhttp3.MediaType
@@ -16,7 +17,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<RegisterModel> {
+class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<ShopUser> {
     lateinit var sessionManager: SessionManger
     lateinit var namee_body: RequestBody
     lateinit var shop_type_body: RequestBody
@@ -24,6 +25,9 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
     lateinit var user_id_body: RequestBody
     lateinit var lat_body: RequestBody
     lateinit var long_body: RequestBody
+    lateinit var shop_id: String
+    lateinit var shop_location: String
+    lateinit var shopType:String
     lateinit var user_id: String
     lateinit var lat: String
     lateinit var long: String
@@ -128,17 +132,23 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
             .enqueue(this)
     }
 
-    override fun onFailure(call: Call<RegisterModel>, t: Throwable) {
+    override fun onFailure(call: Call<ShopUser>, t: Throwable) {
         add_progressbar.visibility = View.GONE
 
     }
 
-    override fun onResponse(call: Call<RegisterModel>, response: Response<RegisterModel>) {
+    override fun onResponse(call: Call<ShopUser>, response: Response<ShopUser>) {
         add_progressbar.visibility = View.GONE
+
         if (response.isSuccessful) {
+            shop_id = response.body()!!.data.get(0).shop_id
+            shopType = response.body()!!.data.get(0).shop_type
+            shop_location = response.body()!!.data.get(0).city_name
             var intent = Intent(this, ShopHomeActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            intent.putExtra("shop_id", shop_id)
+            intent.putExtra("shop_type", shopType)
             startActivity(intent)
             finish()
         }

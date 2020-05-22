@@ -375,6 +375,7 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
             var email = response.body()!!.data.email
             var name = response.body()!!.data.full_name
             var user_id = response.body()!!.data.user_id
+            var shop_id = response.body()!!.data.shop_id
             if (user_type.equals("user")) {
                 sessionManager.CreateInstallerLogin(false, true, email, name, user_id)
                 sessionManager.isUserLogin
@@ -391,6 +392,7 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
                 var intent = Intent(this, ShopHomeActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                intent.putExtra("shop_id", shop_id)
                 startActivity(intent)
                 finish()
             }

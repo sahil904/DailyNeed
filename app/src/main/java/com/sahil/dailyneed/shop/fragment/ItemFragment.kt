@@ -25,7 +25,7 @@ import retrofit2.Response
 class ItemFragment : Fragment(), Callback<ItemModel> {
 
     //var shopList:MutableMap<String, List<String>> = HashMap<String, List<String>>();
-
+    lateinit var shop_id:String
     //private val
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,9 +45,12 @@ class ItemFragment : Fragment(), Callback<ItemModel> {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        Retro.ApiService().getShopItem("8").enqueue(this)
+        shop_id = arguments!!.getString("shop_id")!!
+
+        Retro.ApiService().getShopItem(shop_id).enqueue(this)
         addItemInShop.setOnClickListener{
             val intent = Intent(context, AddItem::class.java)
+            intent.putExtra("shop_id", shop_id)
             startActivity(intent)
         }
     }

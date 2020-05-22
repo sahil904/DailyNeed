@@ -16,7 +16,7 @@ import retrofit2.Call
 import kotlinx.android.synthetic.main.custom_add_list_item.view.*
 import kotlinx.android.synthetic.main.fragment_request.*
 
-class AddItemAdapter(var context: Context, var itemList: List<String> )
+class AddItemAdapter(var context: Context, var itemList: List<String>, var shop_id: String )
     : RecyclerView.Adapter<AddItemAdapter.ViewHolder>(), Callback<ItemModel>{
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,7 +36,7 @@ class AddItemAdapter(var context: Context, var itemList: List<String> )
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemView.add_item_name.setText(itemList.get(position))
         holder.itemView.addItemIcon.setOnClickListener{
-            Retro.ApiService().addItem("8",itemList.get(position)).enqueue(this)
+            Retro.ApiService().addItem(shop_id,itemList.get(position)).enqueue(this)
         }
     }
 

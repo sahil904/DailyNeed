@@ -13,12 +13,16 @@ import kotlinx.android.synthetic.main.custom_toolbar.*
 
 class ShopHomeActivity : AppCompatActivity() {
 
-
+    lateinit var shop_id: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop_home)
-
-
+        if(intent.getStringExtra("shop_id") == null)
+            shop_id = "1"
+        else
+            shop_id = intent.getStringExtra("shop_id")
+        var bundle = Bundle()
+        bundle.putString("shop_id", shop_id)
         callfragment(HomeFragment(), "Home")
         bottom_navigation.setOnNavigationItemReselectedListener { item ->
             when (item.itemId) {
@@ -29,7 +33,9 @@ class ShopHomeActivity : AppCompatActivity() {
                     callfragment(ProfileFragment(), "Profile")
 
                 } R.id.add_item -> {
-                    callfragment(ItemFragment(), "Item")
+                    var itemFragment = ItemFragment()
+                    itemFragment.arguments = bundle
+                    callfragment(itemFragment, "Item")
 
                 }
             }
