@@ -372,8 +372,9 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
         progress_login.visibility = View.GONE
 
         if (response.isSuccessful) {
+
             var email = response.body()!!.data.email
-            var name = response.body()!!.data.full_name
+            var name = response.body()!!.data.user_name
             var user_id = response.body()!!.data.user_id
             var shop_id = response.body()!!.data.shop_id
             if (user_type.equals("user")) {

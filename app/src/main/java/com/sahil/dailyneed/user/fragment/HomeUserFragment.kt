@@ -62,9 +62,7 @@ var long:String?=null
 
     override fun onFailure(call: Call<ShopListModel>, t: Throwable) {
         Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()
-        if(recyler_shop_list.isVisible){
-            recyler_shop_list.visibility = GONE
-        }
+
         no_item_shop.visibility = VISIBLE
     }
 

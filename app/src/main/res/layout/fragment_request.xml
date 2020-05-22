@@ -18,4 +18,13 @@
   android:layout_gravity="center"
     android:id="@+id/user_token_progress"
     />
+  <TextView
+      android:layout_width="match_parent"
+      android:id="@+id/no_request_shop"
+      android:gravity="center"
+      android:visibility="gone"
+      android:textColor="@color/black"
+      android:textSize="22dp"
+      android:layout_height="match_parent"
+    android:text="No Request"/>
 </FrameLayout>

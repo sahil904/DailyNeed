@@ -1,6 +1,7 @@
 package com.sahil.dailyneed.activity.api
 
 import com.sahil.dailyneed.shop.model.*
+import com.sahil.dailyneed.user.model.MyTokenModel
 import com.sahil.dailyneed.user.model.RequestModel
 import com.sahil.dailyneed.user.model.ShopListModel
 import okhttp3.MultipartBody
@@ -75,6 +76,18 @@ interface ApiServices {
         @Field("shop_id") shop_id: String,
         @Field("user_id") user_id: String
     ): retrofit2.Call<RequestModel>
+
+    @FormUrlEncoded
+    @POST("deleteToken")
+    fun deleteToken(
+        @Field("token_id") token_id: String
+    ): retrofit2.Call<MessageModel>
+
+    @FormUrlEncoded
+    @POST("userTokenListing")
+    fun userTokenListing(
+        @Field("user_id") user_id: String
+    ): retrofit2.Call<MyTokenModel>
 
 
     @Multipart

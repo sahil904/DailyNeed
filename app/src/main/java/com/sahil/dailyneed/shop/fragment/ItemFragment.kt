@@ -61,10 +61,8 @@ class ItemFragment : Fragment(), Callback<ItemModel> {
 
     override fun onResponse(call: Call<ItemModel>, response: Response<ItemModel>) {
         var shopList = response.body()!!.data
-        item_list_recyclerView.apply {
-            layoutManager = LinearLayoutManager(activity)
-            adapter = RemoveAdapter(context!!, shopList)
-        }
+            item_list_recyclerView?.adapter = RemoveAdapter(context!!, shopList)
+
     }
 
 

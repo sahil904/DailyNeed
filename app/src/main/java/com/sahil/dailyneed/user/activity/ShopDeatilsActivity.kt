@@ -40,7 +40,8 @@ class ShopDeatilsActivity : AppCompatActivity(), View.OnClickListener, Callback<
         book_now.setOnClickListener(this)
         Retro.ApiService().getShopItem(shop_id).enqueue(object : retrofit2.Callback<ItemModel>{
             override fun onFailure(call: Call<ItemModel>, t: Throwable) {
-                Toast.makeText(this@ShopDeatilsActivity, "Error to show list", Toast.LENGTH_SHORT).show()
+            //    Toast.makeText(this@ShopDeatilsActivity, "Error to show list", Toast.LENGTH_SHORT).show()
+                text_details.visibility=View.VISIBLE
             }
 
             override fun onResponse(call: Call<ItemModel>, response: Response<ItemModel>) {
@@ -61,6 +62,7 @@ class ShopDeatilsActivity : AppCompatActivity(), View.OnClickListener, Callback<
 
     override fun onFailure(call: Call<RequestModel>, t: Throwable) {
         Toast.makeText(this, "server error", Toast.LENGTH_SHORT).show()
+
     }
 
     override fun onResponse(call: Call<RequestModel>, response: Response<RequestModel>) {

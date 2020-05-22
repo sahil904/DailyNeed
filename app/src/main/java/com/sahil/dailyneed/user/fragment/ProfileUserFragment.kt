@@ -29,12 +29,14 @@ class ProfileUserFragment : Fragment(), View.OnClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         sessionManager = SessionManger(context)
+        user_name.text=sessionManager.uSerDeatis.get("name")
 
         account_relative.setOnClickListener(this)
         pp_relative.setOnClickListener(this)
         aboutus_relative.setOnClickListener(this)
         terms_relative.setOnClickListener(this)
         logout_relative.setOnClickListener(this)
+        token_relative.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -60,6 +62,13 @@ class ProfileUserFragment : Fragment(), View.OnClickListener {
             R.id.terms_relative -> {
                 val intent = Intent(context!!, AccountActivity::class.java)
                 intent.putExtra("profile", "terms")
+                startActivity(intent)
+
+            }
+            R.id.token_relative -> {
+
+                val intent = Intent(context!!, AccountActivity::class.java)
+                intent.putExtra("profile", "mytoken")
                 startActivity(intent)
 
             }

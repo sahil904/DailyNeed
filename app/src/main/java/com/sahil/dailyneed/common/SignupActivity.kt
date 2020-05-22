@@ -112,7 +112,7 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener, Callback<Regis
         if (response.isSuccessful) {
             if(response.body()!!.result.equals(1)) {
                 var email = response.body()!!.data.email
-                var name = response.body()!!.data.full_name
+                var name = response.body()!!.data.user_name
                 var user_id = response.body()!!.data.user_id
                 if (user_type.equals("user")) {
 

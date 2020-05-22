@@ -1,100 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="10px"
-
-android:layout_margin="@dimen/margin_5dp"    >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_marginLeft="@dimen/margin_5dp"
-        android:layout_marginRight="@dimen/margin_5dp"
-
-        android:layout_height="wrap_content">
+    android:layout_margin="@dimen/margin_5dp"
+    android:orientation="vertical"
+    android:elevation="10px">
 
     <LinearLayout
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_10dp"
-        android:layout_marginLeft="@dimen/margin_10dp"
-        android:orientation="horizontal">
-
+        android:layout_marginLeft="@dimen/margin_15dp"
+        android:orientation="horizontal"
+        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name: "
-            android:textSize="18sp" />
-
+            android:text="Shop Name: "
+            android:textSize="18sp"/>
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/shop_name_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10px"
             android:text="Sahil"
+            android:layout_gravity="center"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_marginLeft="10px"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_10dp"
-
-        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginLeft="@dimen/margin_15dp"
+        android:layout_marginTop="@dimen/margin_15dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Token No: "
-            android:textSize="18sp" />
-
+            android:textSize="18sp"/>
         <TextView
-            android:id="@+id/token"
+            android:id="@+id/token_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10px"
             android:text="C4CA4238A0"
+            android:layout_gravity="center"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_marginLeft="10px"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_10dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="@dimen/margin_10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:padding="15px">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Time: "
-            android:textSize="18sp" />
-
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_5dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="10px"
             android:text="2020-05-18 01:50:21am"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_marginLeft="10px"/>
     </LinearLayout>
-
+    
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:visibility="gone"
-        android:layout_marginLeft="@dimen/margin_15dp"
         android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginLeft="@dimen/margin_15dp"
         android:layout_marginRight="@dimen/margin_15dp"
-        android:background="@color/black" />
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+        android:background="@color/black"/>
+</LinearLayout>
