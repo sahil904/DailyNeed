@@ -71,7 +71,7 @@ var long:String?=null
                     recyler_shop_list.visibility = VISIBLE
                 }
                 no_item_shop.visibility = GONE
-                var shopList: ArrayList<DataShopListModel> = response.body()!!.data as ArrayList<DataShopListModel>
+                //var shopList: ArrayList<DataShopListModel> = response.body()!!.data as ArrayList<DataShopListModel>
 //                for (i in 0 until list.size) {
 //                    var details = list.get(i)
 //                    list.add(
@@ -85,7 +85,7 @@ var long:String?=null
 //                    )
 //
 //                }
-                recyler_shop_list?.adapter = ShopListadapter(context!!, shopList, this)
+                //recyler_shop_list?.adapter = ShopListadapter(context!!, shopList, this)
             }
             else{
                 if(recyler_shop_list.isVisible){
