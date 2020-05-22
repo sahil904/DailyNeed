@@ -115,16 +115,17 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<D
             MediaType.parse("text/plain"),
             city_register.text.toString()
         ) as RequestBody
-             lat_body = RequestBody.create(
+        lat_body = RequestBody.create(
             MediaType.parse("text/plain"),
             lat
         ) as RequestBody
-             long_body = RequestBody.create(
+
+        long_body = RequestBody.create(
             MediaType.parse("text/plain"),
             long
         ) as RequestBody
 
-        Retro.ApiService().addShop(namee_body, shop_type_body, user_id_body, city_type_body, lat_body,long_body,body1)
+        Retro.ApiService().addShop(namee_body, shop_type_body, user_id_body, city_type_body, lat_body, long_body, body1)
             .enqueue(this)
     }
 

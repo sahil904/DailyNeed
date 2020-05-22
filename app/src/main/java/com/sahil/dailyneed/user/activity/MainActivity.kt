@@ -38,14 +38,14 @@ class MainActivity : AppCompatActivity() {
         getLastLocation()
         bottom_navigation.setOnNavigationItemReselectedListener { item ->
             when (item.itemId) {
-                R.id.home_bottom -> {
+                R.id.home_bottom_user -> {
                     var bundle = Bundle()
                     bundle.putString("lat", lat)
                     bundle.putString("long", long)
                     callfragment(homeUserFragment, "Home")
                     homeUserFragment.arguments = bundle
                 }
-                R.id.user_bottom -> {
+                R.id.user_bottom_user -> {
                     callfragment(ProfileUserFragment(), "Profile")
 
                 }
@@ -55,12 +55,12 @@ class MainActivity : AppCompatActivity() {
 
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.home_bottom -> {
+                R.id.home_bottom_user -> {
                     callfragment(HomeUserFragment(), "Home")
                     // Respond to navigation item 1 click
                     true
                 }
-                R.id.user_bottom -> {
+                R.id.user_bottom_user -> {
                     callfragment(ProfileUserFragment(), "Profile")
                     // Respond to navigation item 2 click
                     true
