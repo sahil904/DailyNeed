@@ -4,9 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.transition.Visibility
 import com.sahil.dailyneed.R
 import com.sahil.dailyneed.activity.api.Retro
 import com.sahil.dailyneed.interfaces.MyItemClickListener
@@ -61,22 +65,34 @@ var long:String?=null
     override fun onResponse(call: Call<ShopListModel>, response: Response<ShopListModel>) {
 
         if (response.isSuccessful) {
-
-            for (i in 0 until response.body()!!.data.size) {
-                var details = response.body()!!.data.get(i)
-                list.add(
-                    DataShopListModel(
-                        details.city_name,
-                        details.image_url,
-                        details.shop_id,
-                        details.shop_name,
-                        details.shop_type
-                    )
-                )
-
+            if (response.body()!!.result != -1)
+            {
+                if(!recyler_shop_list.isVisible){
+                    recyler_shop_list.visibility = VISIBLE
+                }
+                no_item_shop.visibility = GONE
+                var shopList: ArrayList<DataShopListModel> = response.body()!!.data as ArrayList<DataShopListModel>
+//                for (i in 0 until list.size) {
+//                    var details = list.get(i)
+//                    list.add(
+//                        DataShopListModel(
+//                            details.city_name,
+//                            details.image_url,
+//                            details.shop_id,
+//                            details.shop_name,
+//                            details.shop_type
+//                        )
+//                    )
+//
+//                }
+                recyler_shop_list?.adapter = ShopListadapter(context!!, shopList, this)
             }
-            recyler_shop_list?.adapter = ShopListadapter(context!!, list, this)
-
+            else{
+                if(recyler_shop_list.isVisible){
+                    recyler_shop_list.visibility = GONE
+                }
+                no_item_shop.visibility = VISIBLE
+            }
         }
 
     }

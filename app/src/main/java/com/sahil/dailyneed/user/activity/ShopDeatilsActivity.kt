@@ -26,26 +26,6 @@ class ShopDeatilsActivity : AppCompatActivity(), View.OnClickListener, Callback<
         user_id = sessionManager.uSerDeatis.get("id")!!
         clickfun()
 
-        shopList.put(
-            "grocery",
-            arrayListOf(
-                "Sugar",
-                "Rice",
-                "Pulses",
-                "Fruits",
-                "Biscuits",
-                "Tea",
-                "Soap",
-                "Bread",
-                "Pasta"
-            )
-        );
-        shopList.put(
-            "healthcare", arrayListOf(
-                "Acetaminophen", "Adderall", "Alprazolam", "Amitriptyline",
-                "Sanitizer", "Hand Wash", "Body Care", "Pain killer"
-            )
-        );
         //item_deatils_recyler.adapter = AddItemAdapter(shopList.getValue("grocery"))
     }
 

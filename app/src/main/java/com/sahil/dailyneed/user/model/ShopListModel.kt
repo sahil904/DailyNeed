@@ -1,7 +1,7 @@
 package com.sahil.dailyneed.user.model
 
 data class ShopListModel(
-    val data: List<DataShopListModel>,
+    val data: Any,
     val msg: String,
     val result: Int
 )
