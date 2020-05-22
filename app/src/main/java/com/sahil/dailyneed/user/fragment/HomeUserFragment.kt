@@ -67,9 +67,7 @@ var long:String?=null
         if (response.isSuccessful) {
             if (response.body()!!.result != -1)
             {
-                if(!recyler_shop_list.isVisible){
-                    recyler_shop_list.visibility = VISIBLE
-                }
+
                 no_item_shop.visibility = GONE
                 var shopList: ArrayList<DataShopListModel> = response.body()!!.data as ArrayList<DataShopListModel>
 //                for (i in 0 until list.size) {
@@ -88,9 +86,7 @@ var long:String?=null
                 recyler_shop_list?.adapter = ShopListadapter(context!!, shopList, this)
             }
             else{
-                if(recyler_shop_list.isVisible){
-                    recyler_shop_list.visibility = GONE
-                }
+
                 no_item_shop.visibility = VISIBLE
             }
         }

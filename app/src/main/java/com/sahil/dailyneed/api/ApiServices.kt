@@ -1,9 +1,6 @@
 package com.sahil.dailyneed.activity.api
 
-import com.sahil.dailyneed.shop.model.ItemModel
-import com.sahil.dailyneed.shop.model.MessageModel
-import com.sahil.dailyneed.shop.model.RegisterModel
-import com.sahil.dailyneed.shop.model.UserRequestModel
+import com.sahil.dailyneed.shop.model.*
 import com.sahil.dailyneed.user.model.ShopListModel
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -85,8 +82,10 @@ interface ApiServices {
         @Part("shop_name") shop_name: RequestBody, @Part("shop_type") shop_type: RequestBody,
         @Part("user_id") user_id: RequestBody,
         @Part("city_name") city_name: RequestBody,
+        @Part("lat") lat: RequestBody,
+        @Part("long") long: RequestBody,
         @Part image_url: MultipartBody.Part?
-    ): retrofit2.Call<RegisterModel>
+    ): retrofit2.Call<DataAddShopModel>
 
 
 }

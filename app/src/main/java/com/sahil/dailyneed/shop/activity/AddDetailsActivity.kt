@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.sahil.dailyneed.R
 import com.sahil.dailyneed.activity.api.Retro
+import com.sahil.dailyneed.shop.model.DataAddShopModel
 import com.sahil.dailyneed.shop.model.RegisterModel
 import com.sahil.dailyneed.util.SessionManger
 import kotlinx.android.synthetic.main.activity_add_details.*
@@ -16,13 +17,17 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<RegisterModel> {
+class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<DataAddShopModel> {
     lateinit var sessionManager: SessionManger
     lateinit var namee_body: RequestBody
     lateinit var shop_type_body: RequestBody
     lateinit var city_type_body: RequestBody
     lateinit var user_id_body: RequestBody
+    lateinit var lat_body: RequestBody
+    lateinit var long_body: RequestBody
     lateinit var user_id: String
+    lateinit var lat: String
+    lateinit var long: String
     var body1: MultipartBody.Part? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +35,8 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
         setContentView(R.layout.activity_add_details)
         sessionManager = SessionManger(this)
         user_id = intent.getStringExtra("user_id")
+        lat = intent.getStringExtra("lat")
+        long = intent.getStringExtra("long")
         clickfun()
     }
 
@@ -108,16 +115,25 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
             MediaType.parse("text/plain"),
             city_register.text.toString()
         ) as RequestBody
-        Retro.ApiService().addShop(namee_body, shop_type_body, user_id_body, city_type_body, body1)
+             lat_body = RequestBody.create(
+            MediaType.parse("text/plain"),
+            lat
+        ) as RequestBody
+             long_body = RequestBody.create(
+            MediaType.parse("text/plain"),
+            long
+        ) as RequestBody
+
+        Retro.ApiService().addShop(namee_body, shop_type_body, user_id_body, city_type_body, lat_body,long_body,body1)
             .enqueue(this)
     }
 
-    override fun onFailure(call: Call<RegisterModel>, t: Throwable) {
+    override fun onFailure(call: Call<DataAddShopModel>, t: Throwable) {
         add_progressbar.visibility = View.GONE
 
     }
 
-    override fun onResponse(call: Call<RegisterModel>, response: Response<RegisterModel>) {
+    override fun onResponse(call: Call<DataAddShopModel>, response: Response<DataAddShopModel>) {
         add_progressbar.visibility = View.GONE
         if (response.isSuccessful) {
             var intent = Intent(this, ShopHomeActivity::class.java)
