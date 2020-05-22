@@ -1,6 +1,7 @@
 package com.sahil.dailyneed.activity.api
 
 import com.sahil.dailyneed.shop.model.*
+import com.sahil.dailyneed.user.model.RequestModel
 import com.sahil.dailyneed.user.model.ShopListModel
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -73,7 +74,7 @@ interface ApiServices {
     fun shopBooking(
         @Field("shop_id") shop_id: String,
         @Field("user_id") user_id: String
-    ): retrofit2.Call<UserRequestModel>
+    ): retrofit2.Call<RequestModel>
 
 
     @Multipart
