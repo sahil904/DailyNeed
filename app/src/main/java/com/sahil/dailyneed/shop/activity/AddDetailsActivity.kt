@@ -22,7 +22,11 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
     lateinit var shop_type_body: RequestBody
     lateinit var city_type_body: RequestBody
     lateinit var user_id_body: RequestBody
+    lateinit var lat_body: RequestBody
+    lateinit var long_body: RequestBody
     lateinit var user_id: String
+    lateinit var lat: String
+    lateinit var long: String
     var body1: MultipartBody.Part? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +34,8 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
         setContentView(R.layout.activity_add_details)
         sessionManager = SessionManger(this)
         user_id = intent.getStringExtra("user_id")
+        lat = intent.getStringExtra("lat")
+        long = intent.getStringExtra("long")
         clickfun()
     }
 
@@ -108,7 +114,17 @@ class AddDetailsActivity : AppCompatActivity(), View.OnClickListener, Callback<R
             MediaType.parse("text/plain"),
             city_register.text.toString()
         ) as RequestBody
-        Retro.ApiService().addShop(namee_body, shop_type_body, user_id_body, city_type_body, body1)
+        lat_body = RequestBody.create(
+            MediaType.parse("text/plain"),
+            lat
+        ) as RequestBody
+
+        long_body = RequestBody.create(
+            MediaType.parse("text/plain"),
+            long
+        ) as RequestBody
+
+        Retro.ApiService().addShop(namee_body, shop_type_body, user_id_body, city_type_body, lat_body, long_body, body1)
             .enqueue(this)
     }
 

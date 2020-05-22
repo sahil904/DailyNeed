@@ -85,6 +85,8 @@ interface ApiServices {
         @Part("shop_name") shop_name: RequestBody, @Part("shop_type") shop_type: RequestBody,
         @Part("user_id") user_id: RequestBody,
         @Part("city_name") city_name: RequestBody,
+        @Part("lat") lat: RequestBody,
+        @Part("long") long: RequestBody,
         @Part image_url: MultipartBody.Part?
     ): retrofit2.Call<RegisterModel>
 
