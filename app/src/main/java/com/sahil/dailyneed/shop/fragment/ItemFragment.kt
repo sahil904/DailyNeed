@@ -45,7 +45,7 @@ class ItemFragment : Fragment(), Callback<ItemModel> {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        shop_id = arguments!!.getString("shop_id")!!
+        shop_id = arguments!!.getString("shop_id","1")!!
 
         Retro.ApiService().getShopItem(shop_id).enqueue(this)
         addItemInShop.setOnClickListener{

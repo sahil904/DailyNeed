@@ -29,8 +29,11 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
-        callfragment(RequestFragment(), "Home")
+        var bundle = Bundle()
+        bundle.putString("shop_id",arguments!!.getString("shop_id"))
+        var requestFragment = RequestFragment()
+        requestFragment.arguments= bundle
+        callfragment(requestFragment, "Home")
 
         tabLayout_shop.addTab(tabLayout_shop.newTab().setText("Request"))
         tabLayout_shop.addTab(tabLayout_shop.newTab().setText("Items"))
