@@ -3,7 +3,7 @@ package com.sahil.dailyneed.user.model
 data class ShopListModel(
     val result: Int,
     val msg: String,
-    val data: List<DataShopListModel>
+    val data: ArrayList<DataShopListModel>
 
 )
 
