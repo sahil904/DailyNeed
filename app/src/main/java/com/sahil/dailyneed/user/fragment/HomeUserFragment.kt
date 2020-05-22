@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.transition.Visibility
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.sahil.dailyneed.R
 import com.sahil.dailyneed.activity.api.Retro
 import com.sahil.dailyneed.interfaces.MyItemClickListener
@@ -60,6 +62,10 @@ var long:String?=null
 
     override fun onFailure(call: Call<ShopListModel>, t: Throwable) {
         Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()
+        if(recyler_shop_list.isVisible){
+            recyler_shop_list.visibility = GONE
+        }
+        no_item_shop.visibility = VISIBLE
     }
 
     override fun onResponse(call: Call<ShopListModel>, response: Response<ShopListModel>) {
@@ -69,21 +75,25 @@ var long:String?=null
             {
 
                 no_item_shop.visibility = GONE
-                //var shopList: ArrayList<DataShopListModel> = response.body()!!.data as ArrayList<DataShopListModel>
-//                for (i in 0 until list.size) {
-//                    var details = list.get(i)
+
+                list = response.body()!!.data
+                //var x = Gson().fromJson<List<DataShopListModel>>(shopList.toString(), object : TypeToken<List<DataShopListModel>>(){}.type);
+//                for (i in 0 until shopList.size) {
+//                    var details = shopList.get(i)
 //                    list.add(
 //                        DataShopListModel(
 //                            details.city_name,
 //                            details.image_url,
 //                            details.shop_id,
 //                            details.shop_name,
-//                            details.shop_type
+//                            details.shop_type,
+//                            details.lat,
+//                            details.long
 //                        )
 //                    )
 //
 //                }
-                //recyler_shop_list?.adapter = ShopListadapter(context!!, shopList, this)
+                recyler_shop_list?.adapter = ShopListadapter(context!!, list, this)
             }
             else{
 
