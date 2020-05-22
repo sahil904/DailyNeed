@@ -24,6 +24,7 @@ class RequestFragment : Fragment(), Callback<UserRequestModel>, MyItemClickListe
     private var user_list: ArrayList<DataUserRequestModel> = ArrayList()
     private lateinit var sessionManger:SessionManger
     private lateinit var user_id:String
+    private lateinit var shop_id: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,12 +38,13 @@ class RequestFragment : Fragment(), Callback<UserRequestModel>, MyItemClickListe
         super.onActivityCreated(savedInstanceState)
         sessionManger= SessionManger(context)
         user_id=sessionManger.uSerDeatis.get("id")!!
+        shop_id = arguments!!.getString("shop_id","1")
         apihit()
     }
 
     private fun apihit() {
 
-        Retro.ApiService().shopKeeperToken(user_id).enqueue(this)
+        Retro.ApiService().shopKeeperToken(shop_id).enqueue(this)
     }
 
     override fun onFailure(call: Call<UserRequestModel>, t: Throwable) {

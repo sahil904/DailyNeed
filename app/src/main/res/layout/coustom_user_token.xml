@@ -2,36 +2,76 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:elevation="10px">
 
-    <TextView
-        android:id="@+id/name"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15px">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name: "
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sahil"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginLeft="10px"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15px"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Token No: "
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/token"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:text="C4CA4238A0"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginLeft="10px"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sahil"
-        android:layout_gravity="center"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
-    <TextView
-        android:id="@+id/token"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_5dp"
-        android:text="C4CA4238A0"
-        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="15px">
 
-        android:textColor="@color/black"
-        android:textSize="18sp" />
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="@dimen/margin_5dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="2020-05-18 01:50:21am"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time: "
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="2020-05-18 01:50:21am"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginLeft="10px"/>
+    </LinearLayout>
+    
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"

@@ -23,11 +23,15 @@ class ShopHomeActivity : AppCompatActivity() {
             shop_id = intent.getStringExtra("shop_id")
         var bundle = Bundle()
         bundle.putString("shop_id", shop_id)
-        callfragment(HomeFragment(), "Home")
+        var homeFragment = HomeFragment()
+        homeFragment.arguments = bundle
+        callfragment(homeFragment, "Home")
         bottom_navigation.setOnNavigationItemReselectedListener { item ->
             when (item.itemId) {
                 R.id.home_bottom -> {
-                    callfragment(RequestFragment(), "Home")
+                    var requestFragment = RequestFragment()
+                    requestFragment.arguments = bundle
+                    callfragment(requestFragment, "Home")
                 }
                 R.id.user_bottom -> {
                     callfragment(ProfileFragment(), "Profile")
