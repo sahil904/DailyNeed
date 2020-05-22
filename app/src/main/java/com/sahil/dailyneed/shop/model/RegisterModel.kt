@@ -10,5 +10,6 @@ data class Data(
     val email: String,
     val mobile_no: String,
     val full_name: String,
-    val user_id: String
+    val user_id: String,
+    val shop_id: String
 )
